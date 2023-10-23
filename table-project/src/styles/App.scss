@@ -1,0 +1,57 @@
+@import "./variable/variables.scss";
+@import "./function/_mixin";
+
+.referral-table {
+  font-family: $font-family;
+  max-width: $max-width;
+  margin: 0 auto;
+
+  caption {
+    margin-bottom: 20px;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+
+    th,
+    td {
+      @include table-cell-styles;
+    }
+    thead {
+      tr {
+        border-bottom: 1px solid $border-color;
+      }
+    }
+
+    tbody {
+      tr {
+        border-bottom: 1px solid $border-color;
+
+        td {
+          &:nth-child(2),
+          &:nth-child(3),
+          &:nth-child(4) {
+            vertical-align: top;
+          }
+        }
+      }
+    }
+  }
+}
+
+.caption-text {
+  font-size: $header-font-size;
+  font-weight: $header-font-weight;
+  text-align: left;
+}
+
+.date,
+.success-message {
+  color: $text-color;
+}
+
+.error-message {
+  color: $error-color;
+}
